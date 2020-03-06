@@ -3,14 +3,15 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.jsx",
+  entry: "./src/index.ts",
+  devtool: "inline-source-map",
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "bundle.js",
     publicPath: "/"
   },
   resolve: {
-    extensions: [".js", ".jsx"]
+    extensions: [".tsx", ".ts", ".js"]
   },
   devServer: {
     contentBase: path.join(__dirname, "src"),
@@ -24,11 +25,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)?$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: "babel-loader"
-        }
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: "ts-loader"
+      },
+      {
+        enforce: "pre",
+        test: /\.js$/,
+        loader: "source-map-loader"
       },
       {
         test: /\.css$/,
@@ -44,6 +48,10 @@ module.exports = {
         }
       }
     ]
+  },
+  externals: {
+    react: "React",
+    "react-dom": "ReactDOM"
   },
   plugins: [
     new CleanWebpackPlugin(),

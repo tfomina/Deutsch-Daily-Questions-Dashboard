@@ -5,8 +5,15 @@
     "noImplicitAny": true,
     "module": "es6",
     "target": "es5",
+    "lib": ["es2015", "es2017", "dom"],
     "jsx": "react",
     "allowJs": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": false,
+    "baseUrl": "./",
+    "paths": {
+      "components/*": ["src/components/*"]
+    }
   }
 }

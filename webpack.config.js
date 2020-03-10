@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: "./src/index.tsx",
   devtool: "inline-source-map",
   output: {
     path: path.join(__dirname, "/dist"),
@@ -48,10 +48,6 @@ module.exports = {
         }
       }
     ]
-  },
-  externals: {
-    react: "React",
-    "react-dom": "ReactDOM"
   },
   plugins: [
     new CleanWebpackPlugin(),

@@ -21,7 +21,7 @@ const theme = createMuiTheme({
   }
 });
 
-export const App = () => (
+export const App = (): JSX.Element => (
   <ThemeProvider theme={theme}>
     <CssBaseline />
 

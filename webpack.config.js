@@ -8,10 +8,10 @@ module.exports = {
   output: {
     path: path.join(__dirname, "/dist"),
     filename: "bundle.min.js",
-    publicPath: "/"
+    publicPath: "/",
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"]
+    extensions: [".tsx", ".ts", ".js"],
   },
   devServer: {
     contentBase: path.join(__dirname, "src"),
@@ -20,40 +20,40 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     watchContentBase: true,
-    open: true
+    open: true,
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
         exclude: /node_modules/,
-        use: "ts-loader"
+        use: "ts-loader",
       },
       {
         enforce: "pre",
         test: /\.js$/,
-        loader: "source-map-loader"
+        loader: "source-map-loader",
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"]
+        use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(woff|woff2|ttf|eot|svg)$/,
         use: {
           loader: "file-loader",
           options: {
-            name: "[name].[ext]"
-          }
-        }
-      }
-    ]
+            name: "[name].[ext]",
+          },
+        },
+      },
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
       template: "./src/index.html",
-      title: "Deutsch Daily Question"
-    })
-  ]
+      title: "Deutsch Daily Questions Dashboard",
+    }),
+  ],
 };

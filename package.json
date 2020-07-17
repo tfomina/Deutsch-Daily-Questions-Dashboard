@@ -1,5 +1,5 @@
 {
-  "name": "deutsch-daily-question-web",
+  "name": "deutsch-daily-questions-dashboard",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tfomina/Deutsch-Daily-Question-Web.git"
+    "url": "git+https://github.com/tfomina/Deutsch-Daily-Questions-Dashboard.git"
   },
   "author": "Tatyana Fomina",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/tfomina/Deutsch-Daily-Question-Web/issues"
+    "url": "https://github.com/tfomina/Deutsch-Daily-Questions-Dashboard/issues"
   },
-  "homepage": "https://github.com/tfomina/Deutsch-Daily-Question-Web#readme",
+  "homepage": "https://github.com/tfomina/Deutsch-Daily-Questions-Dashboard#readme",
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
